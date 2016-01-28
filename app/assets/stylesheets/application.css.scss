@@ -77,8 +77,16 @@
 }
 // ***************** form ************ //
 .form-wrapper {
-  width: 75%;
-  margin: auto;
+  @extend .col-xs-12;
+  @extend .col-sm-8;
+  @extend .col-md-6;
+  @extend .col-lg-5;
+  @include center-block;
+  float: none;
+  background: white;
+  box-shadow: 3px 3px 3px rgba(178, 178, 178, 0.5);
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 // map
 .location-map iframe { height: 420px; width: 100%; }
