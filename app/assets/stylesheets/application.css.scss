@@ -1,0 +1,94 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+ // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+// *****************Nav bar**************//
+ #contact-header {
+  margin-top: 0em;
+  border-bottom: none;
+  padding-bottom: 0em;
+ }
+
+.wrapper-top {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.contact {
+  color: black;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 5em;
+}
+
+.contact a {
+  color: black;
+}
+
+.social-icons a {
+  text-decoration: none;
+}
+
+// **************** Home ************** //
+.btn-basecamp {
+  background-image: none;
+  background: #3bb370;
+  border: 1px solid #339860;
+  -webkit-box-shadow: 0px 1px 0px #ddd;
+  -moz-box-shadow: 0px 1px 0px #ddd;
+  box-shadow: 0px 1px 0px #ddd;
+  color: #FFF;
+}
+.btn-basecamp:hover {
+  background: #40ca8b;
+  color: #FFF;
+}
+.padding {
+  padding: 3em;
+}
+.pad-btm {
+  padding-bottom: 1em;
+}
+.img-margin { margin: 0.5em auto;}
+
+// ***************** Footer ************ //
+.btm-color {
+  background-color: #f8f8f8;
+  border: 1px solid #eeeeee;
+}
+.footer {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 2em 1em 2em;
+}
+// ***************** form ************ //
+.form-wrapper {
+  @extend .col-xs-12;
+  @extend .col-sm-8;
+  @extend .col-md-6;
+  @extend .col-lg-5;
+  @include center-block;
+  float: none;
+  background: white;
+  box-shadow: 3px 3px 3px rgba(178, 178, 178, 0.5);
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+// map
+.location-map iframe { height: 420px; width: 100%; }
+.maps iframe{ pointer-events: none }
+.maps {   padding-bottom: 1em; }

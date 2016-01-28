@@ -1,33 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="text-center">
+  <h1 class="visible-sm visible-xs">Portfolio</h1>
 
-<h1>Listing Portfolios</h1>
+  <% @portfolios.in_groups_of(3) do |group| %>
+    <div class="row">
+      <% group.compact.each do |portfolio| %>
+        <div class="col-sm-12 col-md-4">
+          <%=link_to( image_tag( portfolio.picture1, class: "img-responsive img-margin" ),
+                    portfolio_path(portfolio)) if portfolio.picture1.present? %>
+          <h4><%= link_to portfolio.client_name, portfolio_path(portfolio) %></h4>
+          <%= portfolio.description %>
+          <% if admin_signed_in? %>
+            <%= link_to 'Show', portfolio %>
+            <%= link_to 'Edit', edit_portfolio_path(portfolio) %>
+            <%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Client name</th>
-      <th>Picture1</th>
-      <th>Picture2</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @portfolios.each do |portfolio| %>
-      <tr>
-        <td><%= portfolio.client_name %></td>
-        <td><%= portfolio.picture1 %></td>
-        <td><%= portfolio.picture2 %></td>
-        <td><%= portfolio.description %></td>
-        <td><%= link_to 'Show', portfolio %></td>
-        <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
-        <td><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Portfolio', new_portfolio_path %>
+  <%# if admin_signed_in? %>
+  <div class="pad-btm">
+    <%= link_to 'New Portfolio', new_portfolio_path, class: "btn btn-basecamp" %>
+  </div>
+  <%# end %>
+</div>

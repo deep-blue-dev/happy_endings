@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
+  root 'pages#home'
+  get 'admin/home', as: :admin
+
+  get 'pages/about', as: :about
+  get 'pages/contact', as: :contact
+
+
   resources :products
   resources :portfolios
+  resources :categories
+
+  # Devise
+  devise_for :admins
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
