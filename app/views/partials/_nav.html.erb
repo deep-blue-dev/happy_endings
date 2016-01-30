@@ -57,7 +57,7 @@
           </li>
           <li>
             <% if admin_signed_in? %>
-              <%= link_to current_admin.email, admin_path %>
+              <%= link_to current_admin.email, admin_path,  class: "btn #{'active' if current_page?(admin_path)}" %>
             <% else %>
               <%= link_to 'Sign In', new_admin_session_path, class: "btn #{'active' if current_page?(new_admin_session_path)}" %>
             <% end %>

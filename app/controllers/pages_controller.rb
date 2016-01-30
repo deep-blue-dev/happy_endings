@@ -6,6 +6,6 @@ class PagesController < ApplicationController
   end
 
   def home
-    @category = Category.all.sample
+    @products = Category.all.sample.products
   end
 end

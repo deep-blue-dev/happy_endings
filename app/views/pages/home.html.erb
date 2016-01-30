@@ -67,35 +67,96 @@
     mollit anim id est laborum.
   </p>
 </div>
+<!-- Products -->
 <div class="products padding text-center">
   <h1>Products</h1>
-  <% @category.products.in_groups_of(3) do |group| %>
-    <div class="row">
-      <% group.compact.each do |product| %>
-      <%= link_to(category_product_path(product.category_id, product.id)) do %>
-        <div class="col-sm-12 col-md-4">
-          <div class="tile-offset" style="background-image:url('<%= product.image_1 %>');">
-              <div class="product-overlay HIDE">
-                <div class="title">
-                  <h3><%= product.name %></h3>
-                </div>
-                <div class="bottom" style="background-image:url(http://i.imgur.com/6HsvJeM.png), url(http://i.imgur.com/IPQHutD.png);background-size:50%,51%;background-position:left,right;background-repeat:no-repeat;">
-                  <div class="bottom-left">
-                    <h6>AS LOW AS</h6>
-                    <h4>$<%= product.price %></h4>
+  <% if browser.mobile? %>
+    <% @products.in_groups_of(3) do |group| %>
+      <div class="row">
+        <% group.compact.each do |product| %>
+
+            <%= link_to category_product_path(product.category_id, product.id) do %>
+              <div class="col-sm-12 col-md-4">
+                <div class="tile-offset" style="background-image:url('<%= product.image_1 %>');">
+                  <div class="product-overlay HIDE">
+                    <div class="title">
+                      <h3><%= product.name %></h3>
+                    </div>
+                    <div class="bottom" style="background-image:url(http://i.imgur.com/6HsvJeM.png), url(http://i.imgur.com/IPQHutD.png);background-size:50%,51%;background-position:left,right;background-repeat:no-repeat;">
+                      <div class="bottom-left">
+                        <h6>AS LOW AS</h6>
+                        <h4>$<%= product.price %></h4>
+                      </div>
+                      <div class="bottom-right">
+                        <h6><a href="#">Quote</a></h6>
+                      </div>
+                    </div>
                   </div>
-                  <div class="bottom-right">
-                    <h6><a href="#">Quote</a></h6>
-                  </div>
                 </div>
+                <% if admin_signed_in? %>
+                  <%= link_to 'Show', [product.category, product], class: "btn btn-primary" %>&nbsp;
+                  <%= link_to 'Edit', edit_category_product_path(product.category, product), class: "btn btn-basecamp" %>&nbsp;
+                  <%= link_to 'Destroy', [product.category, product], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+                <% end %>
               </div>
-          </div>
-        </div>
+            <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+    <!-- end of mobile -->
+    <% else %>
+    <% @products.in_groups_of(3) do |group| %>
+      <div class="row">
+        <% group.compact.each do |product| %>
+              <div class="col-sm-12 col-md-4">
+                <div class="tile-offset" style="background-image:url('<%= product.image_1 %>');">
+                  <div class="product-overlay HIDE modaling" href="#exampleModal<%= product.id %>">
+                    <div class="title">
+                      <h3><%= product.name.titleize %></h3>
+                    </div>
+                    <div class="bottom" style="background-image:url(http://i.imgur.com/6HsvJeM.png), url(http://i.imgur.com/IPQHutD.png);background-size:50%,51%;background-position:left,right;background-repeat:no-repeat;">
+                      <div class="bottom-left">
+                        <h6>AS LOW AS</h6>
+                        <h4>$<%= product.price %></h4>
+                      </div>
+                      <div class="bottom-right">
+                        <h6>Quote</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% if admin_signed_in? %>
+                  <%= link_to 'Show', [product.category, product], class: "btn btn-primary" %>&nbsp;
+                  <%= link_to 'Edit', edit_category_product_path(product.category, product), class: "btn btn-basecamp" %>&nbsp;
+                  <%= link_to 'Destroy', [product.category, product], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+                <% end %>
+              </div>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
 </div>
+
+<% @products.each do |product| %>
+<div class="modal fade" id="exampleModal<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="exampleModalLabel<%= product.id %>"><%= product.name.titleize %></h4>
+      </div>
+      <div class="modal-body">
+        <%= render product %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+<!-- end of products -->
 <div class="choose padding text-center">
   <h1>Why Choose us</h1>
   <!-- http://i.imgur.com/uL651d7.jpg -->
