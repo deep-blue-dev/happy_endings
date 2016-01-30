@@ -55,13 +55,14 @@
           <li>
             <%= link_to 'Home', root_path, class: "btn #{'active' if current_page?(root_path)}" %>
           </li>
-          <li>
             <% if admin_signed_in? %>
-              <%= link_to current_admin.email, admin_path,  class: "btn #{'active' if current_page?(admin_path)}" %>
+              <li><%= link_to current_admin.email, admin_path,  class: "btn #{'active' if current_page?(admin_path)}" %></li>
+              <li><%= link_to 'Sign Out', destroy_admin_session_path, method: :delete, class: "btn" %></li>
             <% else %>
-              <%= link_to 'Sign In', new_admin_session_path, class: "btn #{'active' if current_page?(new_admin_session_path)}" %>
+              <li>
+                <%= link_to 'Sign In', new_admin_session_path, class: "btn #{'active' if current_page?(new_admin_session_path)}" %>
+              </li>
             <% end %>
-          </li>
           <li>
             <%= link_to 'Products', categories_path, class:"btn #{'active' if current_page?(categories_path)}" %>
           </li>
