@@ -15,3 +15,23 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(document).on('ready page:load', function() {
+  // Bootstrap Carousel
+  $('#homeCarousel').carousel({
+    interval:10000,
+    pause: "false"
+  });
+
+  // Product overlay
+  $(".tile-offset").on('mouseenter touchstart', function(){
+    $(this).find(".product-overlay").removeClass('HIDE');
+  });
+  $(".tile-offset").on('mouseleave touchmove',function(){
+    $(this).find(".product-overlay").addClass('HIDE');
+  });
+  $('.modaling').on('click', function() {
+    id = $(this).attr('href');
+    $(id).modal('toggle');
+  });
+});

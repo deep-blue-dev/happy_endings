@@ -8,17 +8,17 @@
           <%=link_to( image_tag( portfolio.picture1, class: "img-responsive img-margin" ),
                     portfolio_path(portfolio)) if portfolio.picture1.present? %>
           <h4><%= link_to portfolio.client_name, portfolio_path(portfolio) %></h4>
-          <%= portfolio.description %>
+          <%= portfolio.description %><br>
           <% if admin_signed_in? %>
-            <%= link_to 'Show', portfolio %>
-            <%= link_to 'Edit', edit_portfolio_path(portfolio) %>
-            <%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Show', portfolio, class: "btn btn-primary" %>
+            <%= link_to 'Edit', edit_portfolio_path(portfolio), class: "btn btn-basecamp" %>
+            <%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
           <% end %>
         </div>
       <% end %>
     </div>
   <% end %>
-
+<br>
   <%# if admin_signed_in? %>
   <div class="pad-btm">
     <%= link_to 'New Portfolio', new_portfolio_path, class: "btn btn-basecamp" %>

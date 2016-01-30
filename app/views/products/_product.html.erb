@@ -1,0 +1,33 @@
+<div class="text-center">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 center-block">
+      <h3 class="product-title"><%= product.name %></h3>
+      <h4 class="aslow">
+        As Low as &nbsp;
+        <span class="low-price"><%= product.price %></span>
+      </h4>
+      <div class="col-sm-12">
+        <%= image_tag(product.image_1, class: "img-responsive img-margin") %>
+      </div>
+      <div class="col-sm-12">
+        <%= image_tag(product.image_2, class: "img-responsive img-margin") %>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6 center-block">
+      <div class="form-group form-wrapper form-wrapper-show">
+        <h4>Request a Quote</h4>
+        <%= form_tag do %>
+          <%= text_field_tag "name", nil, placeholder:"Name", class: "form-control" %><br><br>
+          <%= text_field_tag "email", nil, placeholder:"Email", class: "form-control" %><br><br>
+          <%= text_field_tag "phone", nil, placeholder:"Phone", class: "form-control" %><br><br>
+          <%= text_area_tag "comments", nil, placeholder:"Comments", class: "form-control" %><br><br>
+          <%= submit_tag "Submit", class: "btn btn-basecamp" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% if admin_signed_in? %>
+    <%= link_to 'Edit', edit_category_product_path(product.category, product), class: "btn btn-basecamp" %> |
+    <%= link_to 'Back', category_products_path(product.category), class: "btn btn-basecamp" %>
+  <% end %>
+</div>

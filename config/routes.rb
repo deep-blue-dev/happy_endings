@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   get 'pages/contact', as: :contact
 
 
-  resources :products
   resources :portfolios
-  resources :categories
+  resources :categories do
+    resources :products
+  end
 
   # Devise
   devise_for :admins

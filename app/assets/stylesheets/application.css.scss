@@ -43,6 +43,10 @@
 }
 
 // **************** Home ************** //
+.titles {
+  background-color: #f5f5f5;
+  padding: .2em;
+}
 .btn-basecamp {
   background-image: none;
   background: #3bb370;
@@ -88,7 +92,138 @@
   padding-top: 1rem;
   padding-bottom: 2rem;
 }
+.form-wrapper-show{
+  width: 90%
+}
 // map
 .location-map iframe { height: 420px; width: 100%; }
 .maps iframe{ pointer-events: none }
 .maps {   padding-bottom: 1em; }
+
+// Category ///
+.category-wrapper {
+  background-color: #8bc7ea;
+  margin: 0 5% 5% 5%;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  box-shadow: 8px 8px 0px #CCCCCC;
+  &:hover {
+    background-color: #FEF200;
+  }
+}
+// Products //
+.tile-offset {
+  background-color: white;
+  border: 3px solid #0082cb;
+  text-align: center;
+  z-index: 10;
+  height: 250px;
+  width: auto;
+  margin: 15px;
+  background-size: 200px 200px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.product-overlay {
+  z-index: 100;
+  border: 3px solid #0082cb;
+  background-color: rgba(0,0,0,0.58);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  & .bottom {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -10px;
+    cursor: pointer;
+    margin-bottom: 2.5%;
+    height: 24%;
+  }
+  & .bottom-left {
+    float: left;
+    width: 50%;
+    height: 100%;
+  }
+  & .bottom-right {
+    float: left;
+    width: 50%;
+    height: 100%;
+    & h6 {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      font-family: 'Gotham', sans-serif;
+      margin: 0;
+      width: 100%;
+      position: relative;
+      text-align: left;
+      left: 40px;
+      top: 10px;
+      padding: 5px 5px 2px 5px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  & h3 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Gotham', sans-serif;
+    margin: 0;
+    padding-top: 15%;
+  }
+  & h4 {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Gotham', sans-serif;
+    margin: 0;
+    position: relative;
+    text-align: center;
+  }
+  & h6 {
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: 'Gotham', sans-serif;
+    margin: 0;
+    width: 100%;
+    position: relative;
+    text-align: left;
+    left: 0;
+    padding: 5px 5px 2px 5px;
+  }
+}
+.HIDE {
+  display: none;
+}
+.product-title {
+  margin-top: 0;
+  font-size: 24px;
+  font-family: 'gotham',sans-serif;
+  font-weight: bold;
+  color: #019dff;
+  text-align: left;
+  padding-left: 1em;
+}
+.aslow {
+  margin-top: 0;
+  font-size: 20px;
+  font-family: 'gotham',sans-serif;
+  font-weight: normal;
+  font-style: italic;
+  color: #34D57C;
+  text-align: left;
+  padding-left: 1em;
+}
+.low-price {
+  color: white;
+  padding: 4px 9px;
+  font-style: normal;
+  font-weight: bold;
+  background-color: #34D57C;
+  font-size: 22px;
+}
