@@ -10,27 +10,17 @@
        </ol>
        <!-- Wrapper for slides -->
        <div class="carousel-inner" role="listbox">
-         <div class="item active">
-           <img src="http://hdwallpaperbackgrounds.net/wp-content/uploads/2015/09/best-hd-desktop-wallpapers-of-flower.jpg" alt="dandelion">
-           <div class="carousel-caption">
-             <h1>Headline</h1>
-             <p>Here is an example description</p>
-           </div>
-         </div>
-         <div class="item">
-           <img src="http://hdwallpapersdesktop.com/HD-Wallpapers211/images/Wallpapers-HD-Widescreen--HQ-Desktop-Background-57.jpg" alt="mountains">
-           <div class="carousel-caption">
-             <h1>Headline</h1>
-             <p>Here is an example description</p>
-           </div>
-         </div>
-         <div class="item">
-           <img src="http://hdwallpaperia.com/wp-content/uploads/2013/12/Cat-Desktop-Wallpapers.jpg" alt="astrocat">
-           <div class="carousel-caption">
-             <h1>Headline</h1>
-             <p>Here is an example description</p>
-           </div>
-         </div>
+        <% @products.each_with_index.select{|pd, i| pd.promo?}.zip(0..@products.length).each do |product, index| %>
+          <% p "#{product[0]} index: #{index} , promo: #{product[0].promo}, id: #{product[0].id}" %>
+            <div class="item <%= 'active' if index == 0 %>">
+              <%= image_tag(product[0].image_1, class: "center-block") %>
+              <div class="carousel-caption">
+                  <h1>
+                    <%= link_to product[0].name.titleize, category_product_path(product[0].category_id, product[0].id) %>
+                  </h1>
+              </div>
+            </div>
+        <% end %>
        </div>
        <!-- Controls -->
        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
