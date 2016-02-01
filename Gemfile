@@ -61,4 +61,5 @@ group :development do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'quiet_assets' # Shhh.. we don't need to see the assets
+  gem "letter_opener" # preview email in browser
 end
