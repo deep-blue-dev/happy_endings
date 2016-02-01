@@ -5,13 +5,12 @@
     <% @products.in_groups_of(3) do |group| %>
       <div class="row">
         <% group.compact.each do |product| %>
-
-            <%= link_to category_product_path(product.category_id, product.id) do %>
               <div class="col-sm-12 col-md-4">
                 <div class="tile-offset" style="background-image:url('<%= product.image_1 %>');">
+                  <a href="<%= url_for(action:'show', controller:'products', id:product.id) %>">
                   <div class="product-overlay HIDE">
                     <div class="title">
-                      <h3><%= product.name %></h3>
+                      <h3 style="padding-top: 50%;"><%= product.name %></h3>
                     </div>
                     <div class="bottom" style="background-image:url(http://i.imgur.com/6HsvJeM.png), url(http://i.imgur.com/IPQHutD.png);background-size:50%,51%;background-position:left,right;background-repeat:no-repeat;">
                       <div class="bottom-left">
@@ -19,10 +18,15 @@
                         <h4>$<%= product.price %></h4>
                       </div>
                       <div class="bottom-right">
-                        <h6><a href="#">Quote</a></h6>
+                        <h6>
+                          <a style="color: white;" href="<%= url_for(action:'show', controller:'products', id:product.id) %>">
+                          Quote
+                        </a>
+                      </h6>
                       </div>
                     </div>
                   </div>
+                </a>
                 </div>
                 <% if admin_signed_in? %>
                   <%= link_to 'Show', [product.category, product], class: "btn btn-primary" %>&nbsp;
@@ -30,7 +34,6 @@
                   <%= link_to 'Destroy', [product.category, product], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
                 <% end %>
               </div>
-            <% end %>
         <% end %>
       </div>
     <% end %>
