@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
 
   def home
-    @category = Category.all.reject{ |category| category.products.blank? }.sample
-    @products = @category.products
+    @category = Category.all.reject{ |category| category.try(:products).blank? }.sample
+    @products = @category.try(:products)
   end
 end
