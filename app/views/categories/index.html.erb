@@ -10,6 +10,7 @@
       </ol>
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
+        <% if @products.present? %>
         <% @products.each_with_index.select{|product, index| product.promo?}.zip(0..@products.length).each do |product, index| %>
           <% p "#{product[0]} index: #{index} , promo: #{product[0].promo}, id: #{product[0].id}" %>
             <div class="item <%= 'active' if index == 0 %>">
@@ -20,6 +21,7 @@
                   </h1>
               </div>
             </div>
+        <% end %>
         <% end %>
       </div>
       <!-- Controls -->
@@ -37,7 +39,7 @@
  </div>
 <div class="text-center">
   <h1 class="titles">Categories</h1>
-
+  <% if categories.present? %>
   <% @categories.in_groups_of(3) do |group| %>
     <div class="row">
       <% group.compact.each do |category| %>
@@ -56,10 +58,11 @@
       <% end %>
     </div>
   <% end %>
+  <% end %>
 
-  <%# if admin_signed_in? %>
+  <% if admin_signed_in? %>
   <div class="pad-btm">
     <%= link_to 'New Category', new_category_path, class: "btn btn-basecamp" %>
   </div>
-  <%# end %>
+  <% end %>
 </div>

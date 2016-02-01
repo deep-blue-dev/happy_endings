@@ -1,6 +1,7 @@
 <div class="text-center">
   <h1>Products</h1>
   <!-- Mobile view -->
+  <% if @products.present? %>
   <% if browser.mobile? %>
     <% @products.in_groups_of(3) do |group| %>
       <div class="row">
@@ -69,6 +70,7 @@
       </div>
     <% end %>
   <% end %>
+  <% end %>
 
 
   <br>
@@ -79,6 +81,7 @@
   <% end %>
 </div>
 
+<% if @products.present? %>
 <% @products.each do |product| %>
 <div class="modal fade" id="exampleModal<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog" role="document">
@@ -97,4 +100,5 @@
     </div>
   </div>
 </div>
+<% end %>
 <% end %>
