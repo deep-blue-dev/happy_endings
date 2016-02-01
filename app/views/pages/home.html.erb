@@ -10,6 +10,7 @@
        </ol>
        <!-- Wrapper for slides -->
        <div class="carousel-inner" role="listbox">
+        <% if @products.present? %>
         <% @products.each_with_index.select{|pd, i| pd.promo?}.zip(0..@products.length).each do |product, index| %>
           <% p "#{product[0]} index: #{index} , promo: #{product[0].promo}, id: #{product[0].id}" %>
             <div class="item <%= 'active' if index == 0 %>">
@@ -20,6 +21,7 @@
                   </h1>
               </div>
             </div>
+        <% end %>
         <% end %>
        </div>
        <!-- Controls -->
@@ -60,6 +62,7 @@
 <!-- Products -->
 <div class="products padding text-center">
   <h1>Products</h1>
+  <% if @products.present? %>
   <% if browser.mobile? %>
     <% @products.in_groups_of(3) do |group| %>
       <div class="row">
@@ -128,8 +131,10 @@
       </div>
     <% end %>
   <% end %>
+  <% end %>
 </div>
 
+<% if @products.present? %>
 <% @products.each do |product| %>
 <div class="modal fade" id="exampleModal<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog" role="document">
@@ -148,6 +153,7 @@
     </div>
   </div>
 </div>
+<% end %>
 <% end %>
 <!-- end of products -->
 <div class="choose padding text-center">
