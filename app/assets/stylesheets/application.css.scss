@@ -41,6 +41,20 @@
 .social-icons a {
   text-decoration: none;
 }
+.logo {
+  position: absolute;
+  top: 3px;
+  left: 166px;
+  z-index: 20;
+}
+.fit {
+  height: 60px;
+}
+.mobile-logo {
+  position: absolute;
+  left: 32px;
+  top: 2px;
+}
 
 // **************** Home ************** //
 .titles {
