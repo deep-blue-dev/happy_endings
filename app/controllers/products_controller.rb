@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = @category.products
+    @quote = Quote.new
   end
 
   # GET /products/1
