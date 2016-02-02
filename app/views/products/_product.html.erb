@@ -16,13 +16,15 @@
     <div class="col-sm-12 col-md-6 center-block">
       <div class="form-group form-wrapper form-wrapper-show">
         <h4>Request a Quote</h4>
-        <%= form_tag do %>
-          <%= text_field_tag "name", nil, placeholder:"Name", class: "form-control" %><br><br>
-          <%= text_field_tag "email", nil, placeholder:"Email", class: "form-control" %><br><br>
-          <%= text_field_tag "phone", nil, placeholder:"Phone", class: "form-control" %><br><br>
-          <%= text_area_tag "comments", nil, placeholder:"Comments", class: "form-control" %><br><br>
-          <%= submit_tag "Submit", class: "btn btn-basecamp" %>
-        <% end %>
+        <div class="form-group">
+          <%= form_for @quote, url: quote_request_path do |f| %>
+            <%= f.text_field :name, placeholder:"Name",class: "form-control" %><br><br>
+            <%= f.text_field :email, placeholder:"Email",class: "form-control" %><br><br>
+            <%= f.text_field :phone, placeholder:"Phone",class: "form-control" %><br><br>
+            <%= f.text_field :item, value: "#{product.name}", class: "form-control" %><br><br>
+            <%= f.text_area :comments, placeholder:"Comments",class: "form-control" %><br><br>
+            <%= f.submit "Submit", class: "btn btn-basecamp" %>
+          <% end %>
       </div>
     </div>
   </div>

@@ -35,19 +35,22 @@
           </span>
         </a>
       </div>
+      <div class="logo">
+        <%= link_to( image_tag("https://i.imgur.com/kLCeWth.png", size: "215x160" , class: "img-responsive") ) %>
+      </div>
     </div>
   </div>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
+      <div class="navbar-header fit">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="true">
           <span class="sr-only">Menu</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-
+        <%= link_to ( image_tag("https://i.imgur.com/twpBmE5.png", size: "58x60", class: "img-responsive mobile-logo")), root_path, class: 'navbar-brand visible-sm visible-xs' %>
         <%# link_to image_tag("http://placehold.it/200x200", :size => "200x200", class: "img-responsive"), root_path, class: 'navbar-brand' %>
       </div>
       <div class="collapse navbar-collapse" id="menu">
