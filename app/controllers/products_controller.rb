@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = @category.products.find(params[:id])
+    @quote = Quote.new
   end
 
   # GET /products/new
