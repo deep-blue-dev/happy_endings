@@ -241,3 +241,31 @@
   background-color: #34D57C;
   font-size: 22px;
 }
+/*----------  Carousel  ----------*/
+.elCarousel{
+  height:360px;
+}
+.slides{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.carousel-inner{
+  img {
+    width: 350px;
+  }
+}
+.carousel-caption {
+  position: relative;
+  left: 0;
+  right: 0;
+  padding-bottom: 0;
+  h1{
+    margin:0;
+    padding:10px 0;
+    a{
+      color:cadetblue;
+    }
+  }
+}
