@@ -7,4 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Need to have seed with one admin
-Admin.create email: 'user@example.com', password: '1234567890'
+Admin.create email: 'orders@happyendingstshirts.com', password: '1234567890'
