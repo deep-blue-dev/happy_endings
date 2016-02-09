@@ -1,4 +1,4 @@
-<!-- Main jumbotron for a primary marketing message or call to action -->
+
 <div class="row">
   <div class="col-sm-12 col-md-8 elCarousel">
      <div id="carousel-example-generic" class="carousel slide slides" data-ride="carousel">
@@ -43,13 +43,43 @@
         <%= f.text_field :email, placeholder:"Email",class: "form-control" %><br>
         <%= f.text_field :phone, placeholder:"Phone",class: "form-control" %><br>
         <%= f.text_field :item, placeholder:"Item",class: "form-control" %><br>
-        <%= f.text_area :comments, placeholder:"Comments",class: "form-control" %><br>
+        <%= f.text_area :comments, placeholder:"Print Description",class: "form-control" %><br>
         <%= f.submit "Submit", class: "btn btn-basecamp" %>
       <% end %>
     </div>
   </div>
 </div>
-<div class="testimonials padding text-center">
+
+<div class="why_us padding text-center">
+  <h2>Take advantage of our Easy Ordering Process</h2>
+  <hr>
+  <div class="row">
+    <div class="col-sm-12 col-md-4 pad-btm">
+      <img  class="img-responsive img-margin" src="http://i.imgur.com/uL651d7.jpg " alt="shirts" />
+      <p>
+        <h4>It all Starts with art!</h4>
+        <p>Email us your design, or we can create one for you.</p>
+      </p>
+    </div>
+    <div class="col-sm-12 col-md-4 pad-btm">
+      <img class="img-responsive center-block" src="http://i.imgur.com/uL651d7.jpg " alt="shirts" />
+      <p>
+        <h4>Pick your Promotional Product!</h4>
+        <p>Browse our inventory as well as our extensive catalogs.</p>
+      </p>
+    </div>
+    <div class="col-sm-12 col-md-4 pad-btm">
+      <img  class="img-responsive img-margin" src="http://i.imgur.com/uL651d7.jpg " alt="shirts" />
+      <p>
+        <h4>Submit for a fast quote!</h4>
+        <p>Once approved we turnaround most of our products in</p>
+      </p>
+    </div>
+  </div>
+  <hr>
+  <h3>Established in 1976</h3>
+</div>
+<!-- <div class="testimonials padding text-center">
   <h1>Testimonials</h1>
   <img  class="img-responsive img-margin" src="http://i.imgur.com/rRVRrpo.jpg" alt="shirts" />
   <p>
@@ -59,7 +89,7 @@
     fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
     mollit anim id est laborum.
   </p>
-</div>
+</div> -->
 <!-- Products -->
 <div class="products padding text-center">
   <h1>Products</h1>
@@ -157,10 +187,14 @@
   <% end %>
 <% end %>
 <!-- end of products -->
-<div class="choose padding text-center">
-  <h1>Why Choose us</h1>
+
+
+
+
+<!-- <div class="choose padding text-center">
+  <h1>Why Choose us</h1> -->
   <!-- http://i.imgur.com/uL651d7.jpg -->
-  <img  class="img-responsive img-rounded img-margin" src="http://i.imgur.com/mXEcK0w.jpg" alt="shirts" />
+<!--   <img  class="img-responsive img-rounded img-margin" src="http://i.imgur.com/mXEcK0w.jpg" alt="shirts" />
   <p>
     We are wholesale Custom Printers specializing in t-shirts, promotional products, and signs.
     Since 1976 Happy Endings has been providing superior printing and customer service.
