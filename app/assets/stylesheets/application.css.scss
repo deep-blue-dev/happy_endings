@@ -55,6 +55,9 @@
   left: 32px;
   top: 2px;
 }
+.phoneNumber {
+  font-size: 1.5em;
+}
 
 // **************** Home ************** //
 .titles {
@@ -63,16 +66,16 @@
 }
 .btn-basecamp {
   background-image: none;
-  background: #3bb370;
-  border: 1px solid #339860;
+  background: #F4D955;
+  border: 1px solid #D4B001;
   -webkit-box-shadow: 0px 1px 0px #ddd;
   -moz-box-shadow: 0px 1px 0px #ddd;
   box-shadow: 0px 1px 0px #ddd;
   color: #FFF;
 }
 .btn-basecamp:hover {
-  background: #40ca8b;
-  color: #FFF;
+  background: #F4EA55;
+  color: #524816;
 }
 .padding {
   padding: 3em;
@@ -84,7 +87,7 @@
 
 // ***************** Footer ************ //
 .btm-color {
-  background-color: #33658A;
+  background-color: #86BBD8;
   border: 1px solid #eeeeee;
 }
 .footer {
@@ -116,7 +119,7 @@
 
 // Category ///
 .category-wrapper {
-  background-color: #2F4858;
+  background-color: #F4EA55;
   margin: 0 5% 5% 5%;
   padding-bottom: 1em;
   padding-top: 1em;
