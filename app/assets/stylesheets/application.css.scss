@@ -258,9 +258,10 @@
   justify-content: center;
 }
 .carousel-inner > .item > img, .carousel-inner > .item > a > img{
-  height: 220px;
+  height: 300px;
   width: 350px;
   border-radius: 10px;
+  object-fit: contain;
 }
 .carousel-caption {
   position: relative;
@@ -274,4 +275,18 @@
       color:cadetblue;
     }
   }
+}
+
+.button-img {
+  height: 218px;
+  width: 200px;
+  object-fit: contain;
+}
+.carousel-border {
+  border: 3px solid #0082cb;
+  background-color: white;
+}
+
+body {
+  background-color: rgba(244, 217, 85, 0.26)
 }

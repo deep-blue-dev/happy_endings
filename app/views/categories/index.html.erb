@@ -1,42 +1,29 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="row">
-  <div class="col-sm-12 elCarousel">
-    <div id="carousel-example-generic" class="carousel slide slides" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-      </ol>
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <% if @products.present? %>
-        <% @products.each_with_index.select{|product, index| product.promo?}.zip(0..@products.length).each do |product, index| %>
-          <% p "#{product[0]} index: #{index} , promo: #{product[0].promo}, id: #{product[0].id}" %>
-            <div class="item <%= 'active' if index == 0 %>">
-              <%= image_tag(product[0].image_1, class: "center-block") %>
-              <div class="carousel-caption">
-                  <h1>
-                    <%= link_to product[0].name.titleize, category_product_path(product[0].category_id, product[0].id) %>
-                  </h1>
-              </div>
-            </div>
-        <% end %>
-        <% end %>
+  <h1 class="text-center">Check out our Catalogs!</h1>
+  <div class="row">
+    <div class="col-sm-12 col-md-4">
+      <div class="category-wrapper text-center">
+        <%=link_to( image_tag( "https://i.imgur.com/luheJ7J.png", size: "200x200", class: "img-responsive img-margin" ),
+                  "https://www.4logowearables.com/cgi-bin/hw/phwPseudo_Submit.w?hwCN=197208212203201210201214205199187201198215205216201&hwCNCD=mlSalOGjEeaiffNu") %>
+        <h4 style="color: white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Wearables Catalog</h4>
       </div>
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+    </div>
+    <div class="col-sm-12 col-md-4">
+      <div class="category-wrapper text-center">
+        <%=link_to( image_tag( "https://i.imgur.com/Crq6QTX.png", size: "200x200", class: "img-responsive img-margin button-img" ),
+                  "https://www.brandbookonline.com/cgi-bin/brand/site.w?catalog=top&sponsor=000004&frames=no&target=main") %>
+        <h4 style="color: white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">BrandBook Catalog</h4>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4">
+      <div class="category-wrapper text-center">
+        <%=link_to( image_tag( "https://i.imgur.com/yXH9Y4W.png", size: "200x200", class: "img-responsive img-margin button-img" ),
+                  "http://www.keystoneline.com/index.php") %>
+        <h4 style="color: white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Keystone Catalog</h4>
+      </div>
     </div>
   </div>
 
- </div>
 <div class="text-center">
   <h1 class="titles">Categories</h1>
   <% if @categories.present? %>
