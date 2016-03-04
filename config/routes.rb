@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'pages#home'
   get 'admin/home', as: :admin
+  get 'admin' => 'admin#home'
+
 
   get 'pages/about', as: :about
   get 'pages/contact', as: :contact
