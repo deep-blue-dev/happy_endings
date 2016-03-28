@@ -22,6 +22,7 @@
   padding-bottom: 0em;
  }
 
+
 a h3 {
   color: #33658a;
 }
@@ -45,7 +46,7 @@ i.fa{
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 
-}
+
 .contact {
   color: black;
   font-size: 1.1em;
@@ -58,6 +59,7 @@ i.fa{
   color: black;
 }
 
+
 .contact2 {
   font-weight: bold;
 }
@@ -67,6 +69,7 @@ i.fa{
   position: relative;
   bottom:5px;
 }
+
 
 .social-icons a {
   text-decoration: none;
@@ -89,6 +92,7 @@ i.fa{
   font-size: 1.5em;
 }
 
+
 .container-fluid {
   background-color: #f36423;
 }
@@ -96,6 +100,7 @@ i.fa{
 .navbar-default .navbar-nav > li > a  {
   color: white;
 }
+
 
 // **************** Home ************** //
 .titles {
@@ -296,9 +301,11 @@ i.fa{
   justify-content: center;
 }
 .carousel-inner > .item > img, .carousel-inner > .item > a > img{
+
   // height: 300px;
   // width: 350px;
   // border-radius: 10px;
+
   object-fit: contain;
 }
 .carousel-caption {
