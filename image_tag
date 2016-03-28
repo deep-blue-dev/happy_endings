@@ -1,0 +1,15 @@
+<div class="carousel-inner" role="listbox">
+ <% if @products.present? %>
+ <% @products.each_with_index.select{|pd, i| pd.promo?}.zip(0..@products.length).each do |product, index| %>
+   <% p "#{product[0]} index: #{index} , promo: #{product[0].promo}, id: #{product[0].id}" %>
+     <div class="item <%= 'active' if index == 0 %>">
+       <%= image_tag(product[0].image_1, class: "center-block") %>
+       <div class="carousel-caption">
+           <h1>
+             <%= link_to product[0].name.titleize, category_product_path(product[0].category_id, product[0].id) %>
+           </h1>
+       </div>
+     </div>
+ <% end %>
+ <% end %>
+</div>

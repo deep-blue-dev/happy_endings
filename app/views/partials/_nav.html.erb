@@ -1,0 +1,69 @@
+<div class="page-header" id="contact-header">
+  <div class="row">
+    <div class="col-md-12 wrapper-top contact visible-md visible-lg">
+      <p class="phoneNumber"> 305-759-4467</p>
+      <a href="mailto:orders@happyendingstshirts.com">orders@happyendingstshirts.com</a>
+      <div class="social-icons">
+        <a href="#" title="Pinterest" target="_blank">
+        <a href="https://www.facebook.com/Happy-Endings-of-Miami-Inc-1007617235976618" title="Facebook" target="_blank">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle-thin fa-stack-2x"></i>
+            <i class="fa fa-facebook fa-stack-1x"></i>
+          </span>
+        </a>
+        <a href="https://plus.google.com/111763986848848796642/about" title="Google+" target="_blank">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle-thin fa-stack-2x"></i>
+            <i class="fa fa-google-plus fa-stack-1x"></i>
+          </span>
+        </a>
+        <a href="https://www.instagram.com/happyendingstshirts/" title="Instagram" target="_blank">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle-thin fa-stack-2x"></i>
+            <i class="fa fa-instagram fa-stack-1x"></i>
+          </span>
+        </a>
+      </div>
+      <div class="logo">
+        <%= link_to( image_tag("https://i.imgur.com/FEiIj2r.png", size: "619x105" , class: "img-responsive"), root_path ) %>
+      </div>
+    </div>
+  </div>
+  <nav style="background-color:#86BBD8;" class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header fit">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="true">
+          <span class="sr-only">Menu</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to ( image_tag("https://i.imgur.com/twpBmE5.png", size: "58x60", class: "img-responsive mobile-logo")), root_path, class: 'navbar-brand visible-sm visible-xs' %>
+        <%# link_to image_tag("http://placehold.it/200x200", :size => "200x200", class: "img-responsive"), root_path, class: 'navbar-brand' %>
+      </div>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to 'Home', root_path, class: "btn #{'active' if current_page?(root_path)}" %>
+          </li>
+          <li>
+            <%= link_to 'Products', categories_path, class:"btn #{'active' if current_page?(categories_path)}" %>
+          </li>
+          <li>
+            <%= link_to "About", about_path, class:"btn #{'active' if current_page?(about_path)}" %>
+          </li>
+          <li>
+            <%= link_to "Contact", contact_path, class:"btn #{'active' if current_page?(contact_path)}" %>
+          </li>
+          <li>
+            <%= link_to "Portfolio", portfolios_path, class:"btn #{'active' if current_page?(portfolios_path)}" %>
+          </li>
+          <% if admin_signed_in? %>
+          <li><%= link_to "Sign Out", destroy_admin_session_path, method: :delete, class: "btn" %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

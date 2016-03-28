@@ -1,0 +1,14 @@
+<h2>Quote Request</h2>
+
+<p>
+  <%= @quote_message.name %> requested a quote for <%= @quote_message.item %>
+</p>
+<p>
+  You can reach them here: <br>
+  Phone: <%= @quote_message.phone %> <br>
+  Email: <%= @quote_message.email %>
+</p>
+<h5><%= @quote_message.name %>'s  Comments</h5>
+<p>
+  <%= @quote_message.comments %>
+</p>

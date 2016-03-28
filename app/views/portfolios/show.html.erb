@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<div class="text-center">
+  <h2><%= @portfolio.client_name %></h2>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <%= image_tag(@portfolio.picture1, class: "img-responsive img-margin") %>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <%= image_tag(@portfolio.picture2, class: "img-responsive img-margin") %>
+    </div>
+  </div>
+  <p>
+    <strong>Description</strong><br>
+    <%= @portfolio.description %>
+  </p>
+  <%= link_to 'Edit', edit_portfolio_path(@portfolio), class: "btn btn-basecamp" %> |
+  <%= link_to 'Back', portfolios_path, class: "btn btn-basecamp" %>
+</div>

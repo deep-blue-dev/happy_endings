@@ -1,0 +1,35 @@
+<div class="form-wrapper">
+  <%= form_for(@portfolio) do |f| %>
+    <% if @portfolio.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@portfolio.errors.count, "error") %> prohibited this portfolio from being saved:</h2>
+
+        <ul>
+        <% @portfolio.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :client_name%><br>
+      <%= f.text_field :client_name, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :picture1 %><br>
+      <%= f.text_field :picture1, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :picture2 %><br>
+      <%= f.text_field :picture2, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :description %><br>
+      <%= f.text_area :description, class: "form-control"%>
+    </div>
+    <div class="actions">
+      <%= f.submit "Submit", class: "btn btn-basecamp"%>
+    </div>
+  <% end %>
+</div>

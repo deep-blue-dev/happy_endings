@@ -1,0 +1,330 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+ // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+// *****************Nav bar**************//
+ #contact-header {
+  margin-top: 0em;
+  border-bottom: none;
+  padding-bottom: 0em;
+ }
+
+a h3 {
+  color: #33658a;
+}
+
+i.fa{
+  color: #33658a;
+
+}
+
+.catalogs{
+  color: rgb(51, 101, 138);
+  text-decoration: underline;
+
+}
+
+.phoneNumber {
+    color: #33658a;
+}
+
+.wrapper-top {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+
+}
+.contact {
+  color: black;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 5em;
+}
+
+.contact a {
+  color: black;
+}
+
+.contact2 {
+  font-weight: bold;
+}
+
+.contact2 a {
+  color: black;
+  position: relative;
+  bottom:5px;
+}
+
+.social-icons a {
+  text-decoration: none;
+}
+.logo {
+  position: absolute;
+  top: 6px;
+  left: 40px;
+  z-index: 20;
+}
+.fit {
+  height: 60px;
+}
+.mobile-logo {
+  position: absolute;
+  left: 32px;
+  top: 2px;
+}
+.phoneNumber {
+  font-size: 1.5em;
+}
+
+.container-fluid {
+  background-color: #f36423;
+}
+
+.navbar-default .navbar-nav > li > a  {
+  color: white;
+}
+
+// **************** Home ************** //
+.titles {
+  background-color: #86BBD8;
+  padding: .2em;
+}
+.btn-basecamp {
+  background-image: none;
+  background: #33658a;
+  border: 1px solid #3365a8;
+  -webkit-box-shadow: 0px 1px 0px #ddd;
+  -moz-box-shadow: 0px 1px 0px #ddd;
+  box-shadow: 0px 1px 0px #ddd;
+  color: #FFF;
+}
+.btn-basecamp:hover {
+  background: #F4EA55;
+  color: #524816;
+}
+.padding {
+  padding: 3em;
+}
+.pad-btm {
+  padding-bottom: 1em;
+}
+.img-margin { margin: 0.5em auto;}
+
+// ***************** Footer ************ //
+.btm-color {
+  background-color: #f36423;
+  border: 1px solid #eeeeee;
+}
+.footer {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 2em 1em 2em;
+}
+// ***************** form ************ //
+.form-wrapper {
+  @extend .col-xs-12;
+  @extend .col-sm-8;
+  @extend .col-md-6;
+  @extend .col-lg-5;
+  @include center-block;
+  float: none;
+  background: white;
+  box-shadow: 3px 3px 3px rgba(178, 178, 178, 0.5);
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+.form-wrapper-show{
+  width: 90%
+}
+// map
+.location-map iframe { height: 420px; width: 100%; }
+.maps iframe{ pointer-events: none }
+.maps {   padding-bottom: 1em; }
+
+// Category ///
+.category-wrapper {
+  background-color: #F4EA55;
+  margin: 0 5% 5% 5%;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  box-shadow: 8px 8px 0px #CCCCCC;
+  &:hover {
+    background-color: #ff4e00;
+  }
+}
+// Products //
+.tile-offset {
+  background-color: white;
+  border: 3px solid #0082cb;
+  text-align: center;
+  z-index: 10;
+  height: 250px;
+  width: auto;
+  margin: 15px;
+  background-size: 200px 200px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.product-overlay {
+  z-index: 100;
+  border: 3px solid #0082cb;
+  background-color: rgba(0,0,0,0.58);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  & .bottom {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -10px;
+    cursor: pointer;
+    margin-bottom: 2.5%;
+    height: 24%;
+  }
+  & .bottom-left {
+    float: left;
+    width: 50%;
+    height: 100%;
+  }
+  & .bottom-right {
+    float: left;
+    width: 50%;
+    height: 100%;
+    & h6 {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      font-family: 'Gotham', sans-serif;
+      margin: 0;
+      width: 100%;
+      position: relative;
+      text-align: left;
+      left: 40px;
+      top: 10px;
+      padding: 5px 5px 2px 5px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  & h3 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Gotham', sans-serif;
+    margin: 0;
+    padding-top: 15%;
+  }
+  & h4 {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Gotham', sans-serif;
+    margin: 0;
+    position: relative;
+    text-align: center;
+  }
+  & h6 {
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: 'Gotham', sans-serif;
+    margin: 0;
+    width: 100%;
+    position: relative;
+    text-align: left;
+    left: 0;
+    padding: 5px 5px 2px 5px;
+  }
+}
+.HIDE {
+  display: none;
+}
+.product-title {
+  margin-top: 0;
+  font-size: 24px;
+  font-family: 'gotham',sans-serif;
+  font-weight: bold;
+  color: #019dff;
+  text-align: left;
+  padding-left: 1em;
+}
+.aslow {
+  margin-top: 0;
+  font-size: 20px;
+  font-family: 'gotham',sans-serif;
+  font-weight: normal;
+  font-style: italic;
+  color: #34D57C;
+  text-align: left;
+  padding-left: 1em;
+}
+.low-price {
+  color: white;
+  padding: 4px 9px;
+  font-style: normal;
+  font-weight: bold;
+  background-color: #34D57C;
+  font-size: 22px;
+}
+/*----------  Carousel  ----------*/
+.elCarousel{
+  height:360px;
+}
+.carousel-indicators{
+  display:none;
+}
+.slides{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img{
+  // height: 300px;
+  // width: 350px;
+  // border-radius: 10px;
+  object-fit: contain;
+}
+.carousel-caption {
+  position: relative;
+  left: 0;
+  right: 0;
+  padding-bottom: 0;
+  h1{
+    margin:0;
+    padding:10px 0;
+    a{
+      color:cadetblue;
+    }
+  }
+}
+
+.button-img {
+  height: 218px;
+  width: 200px;
+  object-fit: contain;
+}
+.carousel-border {
+  border: 3px solid #0082cb;
+  background-color: white;
+}
+
+body {
+  background-color: rgba(255, 255, 255, 1)
+}

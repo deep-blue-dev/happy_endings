@@ -1,0 +1,64 @@
+<footer>
+  <div class="container-fluid btm-color footer">
+    <div class="row">
+      <div class="col-sm-6 text-center">
+        <h1 class="catalogs">Catalogs</h1>
+        <ul style="list-style-type: none; padding:0; margin:0;">
+          <li>
+            <a style="color:#F4EA55;" href="http://www.4logowearables.com/cgi-bin/hw/phwPseudo_Submit.w?hwCN=197208212203201210201214205199187201198215205216201&hwCNCD=mlSalOGjEeaiffNu">
+              <h3>Wearables Clothing Catalog</h3>
+            </a>
+          </li>
+          <li>
+            <a style="color:#F4EA55;" href="http://www.brandbookonline.com/cgi-bin/brand/site.w?catalog=top&sponsor=000004&frames=no&target=main">
+              <h3>BrandBook Clothing Catalog</h3>
+            </a>
+          </li>
+          <li>
+            <a style="color:#F4EA55;" href="http://www.keystoneline.com/index.php">
+              <h3>Keystone Promotional Catalog</h3>
+            </a>
+          </li>
+           <% if admin_signed_in? %>
+              <li><%= link_to current_admin.email, admin_path,  class: "btn #{'active' if current_page?(admin_path)}" %></li>
+              <li><%= link_to 'Sign Out', destroy_admin_session_path, method: :delete, class: "btn" %></li>
+            <% else %>
+              <li>
+                <%= link_to 'Sign In', new_admin_session_path, class: "btn #{'active' if current_page?(new_admin_session_path)}" %>
+              </li>
+            <% end %>
+        </ul>
+      </div>
+      <div class="col-sm-6 text-center" style="margin:15px 0;">
+        <%= link_to(image_tag('https://i.imgur.com/twpBmE5.png', width: '75px'), root_path)%>
+        <p>
+          Custom Printed Shirts &amp; Promotional Items
+        </p>
+        <h4>Connect Online</h4>
+        <div class="social-icons">
+          <a style="color:#F4EA55;" href="https://www.facebook.com/Happy-Endings-of-Miami-Inc-1007617235976618" title="Facebook" target="_blank">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle-thin fa-stack-2x"></i>
+              <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+          </a>
+          <a  style="color:#F4EA55;"href="https://plus.google.com/111763986848848796642/about" title="Google+" target="_blank">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle-thin fa-stack-2x"></i>
+              <i class="fa fa-google-plus fa-stack-1x"></i>
+            </span>
+          </a>
+          <a style="color:#F4EA55;" href="https://www.instagram.com/happyendingstshirts/" title="Instagram" target="_blank">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle-thin fa-stack-2x"></i>
+              <i class="fa fa-instagram fa-stack-1x"></i>
+            </span>
+          </a>
+        </div>
+        <div class="col-md-12 wrapper-top contact2 visible-md visible-xs">
+          <a href="mailto:orders@happyendingstshirts.com">orders@happyendingstshirts.com</a>
+          <p class="phoneNumber2"> 305-759-4467</p>
+      </div>
+    </div>
+  </div>
+</footer>
